@@ -1,0 +1,19 @@
+[server]
+enableStaticServing = true
+enableXsrfProtection = false
+maxUploadSize = 200
+port = 8501
+
+[browser]
+gatherUsageStats = false
+serverAddress = "localhost"
+
+[theme]
+primaryColor = "#667eea"
+backgroundColor = "#ffffff" 
+secondaryBackgroundColor = "#f0f2f6"
+textColor = "#262730"
+font = "sans serif"
+
+[global]
+developmentMode = false

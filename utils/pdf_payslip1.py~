@@ -1,0 +1,112 @@
+# utils/pdf_payslip1.py
+from fpdf import FPDF
+from datetime import datetime, date
+import calendar
+import os
+
+FONT_PATH = "fonts"
+FONT_NAME = "DejaVu"
+
+class PayslipPDF(FPDF):
+    def __init__(self):
+        super().__init__()
+        self.set_auto_page_break(auto=True, margin=15)
+        try:
+            self.add_font(FONT_NAME, "", os.path.join(FONT_PATH, "DejaVuSans.ttf"), uni=True)
+            self.add_font(FONT_NAME, "B", os.path.join(FONT_PATH, "DejaVuSans-Bold.ttf"), uni=True)
+            self.add_font(FONT_NAME, "I", os.path.join(FONT_PATH, "DejaVuSans-Oblique.ttf"), uni=True)
+        except RuntimeError:
+            pass
+        self.set_font(FONT_NAME, "", 12)
+        self.add_page()
+
+    def header(self):
+        self.set_font(FONT_NAME, "B", 14)
+        self.cell(0, 10, "Shri Swami Samarth Pvt. Ltd.", ln=True, align="C")
+        self.set_draw_color(200, 200, 200)
+        self.line(10, self.get_y(), 200, self.get_y())
+        self.ln(4)
+
+    def add_title(self, name, emp_id, month_str):
+        self.set_font(FONT_NAME, "", 12)
+        self.cell(0, 10, f"Payslip for {name} ({emp_id}) • {month_str}", ln=True, align="C")
+        self.ln(4)
+
+    def add_attendance_calendar(self, year, month, attendance_map={}, holidays=[]):
+        self.set_font(FONT_NAME, "", 11)
+        self.cell(0, 8, f"Attendance Calendar for {calendar.month_name[month]} {year}", ln=True)
+        self.set_font(FONT_NAME, "", 10)
+        weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        for day in weekdays:
+            self.cell(27, 6, txt=day, border=1, align="C")
+        self.ln()
+
+        first_weekday, total_days = calendar.monthrange(year, month)
+        current_day = 1
+        while current_day <= total_days:
+            for weekday in range(7):
+                if (current_day == 1 and weekday < first_weekday) or current_day > total_days:
+                    self.cell(27, 6, txt="", border=1)
+                else:
+                    dt = date(year, month, current_day)
+                    marker = attendance_map.get(current_day)
+                    if not marker:
+                        marker = "-" if dt.weekday() in [1, 6] or dt.isoformat() in holidays else "A"
+                    label = f"{str(current_day).zfill(2)} {marker}"
+                    self.cell(27, 6, txt=label, border=1, align="C")
+                    current_day += 1
+            self.ln()
+
+        self.ln(2)
+        self.multi_cell(0, 5, "Legend: F = Full | H = Half | A = Absent | L = Late | - = Holiday/Tuesday")
+        self.ln(2)
+
+    def add_salary_section(self, data):
+        self.set_font(FONT_NAME, "", 11)
+        items = list(data.items())
+        for i in range(0, len(items), 2):
+            label1, value1 = items[i]
+            label2, value2 = items[i + 1] if i + 1 < len(items) else ("", "")
+            self.cell(50, 8, f"{label1}:", border=0)
+            self.cell(45, 8, f"{value1}", border=0)
+            self.cell(50, 8, f"{label2}:", border=0)
+            self.cell(0, 8, f"{value2}", ln=True)
+
+    def add_leave_summary(self, summary):
+        self.set_font(FONT_NAME, "B", 11)
+        self.ln(2)
+        self.cell(0, 8, "Leave Adjustment Summary", ln=True)
+        items = list(summary.items())
+        for i in range(0, len(items), 2):
+            label1, value1 = items[i]
+            label2, value2 = items[i + 1] if i + 1 < len(items) else ("", "")
+            self.cell(50, 8, f"{label1}:", border=0)
+            self.cell(45, 8, f"{value1}", border=0)
+            self.cell(50, 8, f"{label2}:", border=0)
+            self.cell(0, 8, f"{value2}", ln=True)
+
+    def add_notes(self, notes):
+        self.set_font(FONT_NAME, "I", 10)
+        self.ln(2)
+        for note in notes:
+            note = str(note).replace("\n", " ").replace("\r", "").strip() or "(blank note)"
+            if len(note.split()) == 1 and len(note) > 40:
+                note = "\u200b".join([note[i:i + 30] for i in range(0, len(note), 30)])
+            try:
+                self.multi_cell(0, 6, f"Note: {note}", align="L")
+            except Exception:
+                self.cell(0, 6, "Note: (could not render this line)", ln=True)
+            self.ln(1)
+
+    def render_footer(self, emp_id, month_str):
+        self.set_y(-25)
+        self.set_font(FONT_NAME, "I", 10)
+        generated = datetime.now().strftime("%Y-%m-%d %H:%M")
+        self.cell(0, 6, f"Shri Swami Samarth Pvt. Ltd. • Generated on: {generated}", ln=True, align="C")
+        self.cell(0, 6, f"Payslip Format v1.3 • Document ID: SSPL-{emp_id}-{month_str}", ln=True, align="C")
+        self.ln(8)
+        self.cell(0, 6, "__________________________", ln=True, align="L")
+        self.cell(0, 6, "Authorized Signature", ln=True, align="L")
+
+    def get_bytes(self):
+        return self.output(dest="S").encode("latin1")

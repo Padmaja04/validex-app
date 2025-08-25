@@ -1,0 +1,8 @@
+timestamp,employee_name,related_date,issue_type,description,status,resolution,follow_up
+2025-07-19 17:47:44.074267,Padmaja,2025-07-19 00:00:00,Incorrect Late Mark,"hi mam,
+ my name is padmaja i am not late on 19/07/2025 but it showing late mark",Pending,-,"-hi mam,
+ my name is padmaja i am not late on 19/07/2025 but it showing late mark please let me know it soon admin
+"
+2025-07-20 23:05:04.434497,Admin Padmaja,2025-07-20 00:00:00,Other,i am not getting my payslip,Resolved,"we have sent you mail please check and revert back
+",-
+2025-07-30 17:45:20.464879,shivaji,2025-07-30,Biometric Failed,"dear sir/mam, as i was trying to login at 9.15 my face login failed please consider my login at 9.15",Pending,

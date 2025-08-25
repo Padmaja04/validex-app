@@ -1,0 +1,4 @@
+employee_id,employee_name,department,notice_issued_date,notice_period_days,resignation_date,status,complied_notice,admin_cleared,remarks,system_status
+1.0,sunil,electrical,2025-07-01,45,2025-08-15,exited,✔️ Compliant,True,all process completed,exited
+6.0,sheetal,electronic,2025-07-01,20,2025-07-20,exited,❌ Short Notice,True,,exited
+nan,,,,,,,,,,

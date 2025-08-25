@@ -1,0 +1,8 @@
+timestamp,admin_user,employee_id,action_type,description,reason,employee_name,start_datetime,exit_datetime,date_only,total_hours,extra_hours,extra_pay,attendance_status,late_mark,late_penalty,method,confidence,notes
+2025-08-15 23:56:10,prashant_user,1.0,Resignation Update,Updated status to cancelled with remarks: got good hike,-,,,,,,,,,,,,,
+2025-08-15 23:58:07,prashant_user,1.0,Resignation Update,Updated status to cancelled with remarks: got good hike,-,,,,,,,,,,,,,
+2025-08-15 23:59:10,prashant_user,1.0,Resignation Update,Updated status to cancelled with remarks: got good hike,-,,,,,,,,,,,,,
+2025-08-16 00:05:28,prashant_user,1.0,Resignation Update,Updated status to cancelled with remarks: adjustment,-,,,,,,,,,,,,,
+2025-08-16 00:08:44,prashant_user,1.0,Resignation Update,Updated status to cancelled with remarks: adjustment,-,,,,,,,,,,,,,
+2025-08-16 00:18:05,prashant_user,1.0,Resignation Update,Updated status to cancelled with remarks: adjustment,-,,,,,,,,,,,,,
+2025-08-16 00:34:53,prashant_user,1.0,Resignation Update,Updated status to exited with remarks: all process completed,-,,,,,,,,,,,,,

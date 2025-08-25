@@ -1,0 +1,55 @@
+2025-08-25 00:49:55,723 - views.attendance - INFO - validate_session_security:2629 - Session validation successful for user: padmaja_user
+2025-08-25 00:49:55,728 - views.attendance - INFO - run_attendance:2730 - Attendance access by padmaja_user (9)
+2025-08-25 00:49:56,173 - views.attendance - ERROR - show_database_status:3696 - Database connection failed: Not an executable object: 'SELECT DB_NAME()'
+2025-08-25 00:50:02,573 - views.attendance - INFO - validate_session_security:2629 - Session validation successful for user: padmaja_user
+2025-08-25 00:50:02,574 - views.attendance - INFO - run_attendance:2730 - Attendance access by padmaja_user (9)
+2025-08-25 00:50:02,737 - views.attendance - ERROR - show_database_status:3696 - Database connection failed: Not an executable object: 'SELECT DB_NAME()'
+2025-08-25 00:50:02,743 - views.attendance - INFO - get_location_ultra_fast:2407 - Preset location selected: Main Office
+2025-08-25 00:50:02,969 - views.attendance - INFO - validate_session_security:2629 - Session validation successful for user: padmaja_user
+2025-08-25 00:50:02,969 - views.attendance - INFO - run_attendance:2730 - Attendance access by padmaja_user (9)
+2025-08-25 00:50:03,044 - views.attendance - ERROR - show_database_status:3696 - Database connection failed: Not an executable object: 'SELECT DB_NAME()'
+2025-08-25 00:50:03,048 - views.attendance - INFO - check_location_permission:2312 - Distance to Main Office Mumbai: 0.0m (limit: 100m)
+2025-08-25 00:50:03,049 - views.attendance - INFO - check_location_permission:2315 - Location approved: Main Office Mumbai
+2025-08-25 00:50:03,050 - security - INFO - log_security_event:2653 - LOCATION_VERIFIED - 9 - padmaja_user - Location: Main Office Mumbai, Distance: 0.0m
+2025-08-25 00:50:03,063 - views.attendance - INFO - load_employee_master:1562 - Loading employee master data
+2025-08-25 00:50:19,561 - views.attendance - ERROR - safe_db_connection:1215 - Database connection error: (pyodbc.OperationalError) ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-08-25 00:50:19,561 - views.attendance - WARNING - load_employee_master:1578 - Database connection failed: (pyodbc.OperationalError) ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-08-25 00:50:19,561 - views.attendance - ERROR - run_attendance:2905 - Employee verification error: 'NoneType' object has no attribute 'empty'
+2025-08-25 00:51:47,896 - views.attendance - INFO - validate_session_security:2629 - Session validation successful for user: padmaja_user
+2025-08-25 00:51:47,898 - views.attendance - INFO - run_attendance:2730 - Attendance access by padmaja_user (9)
+2025-08-25 00:51:48,147 - views.attendance - ERROR - show_database_status:3696 - Database connection failed: Not an executable object: 'SELECT DB_NAME()'
+2025-08-25 00:51:51,787 - views.attendance - INFO - validate_session_security:2629 - Session validation successful for user: padmaja_user
+2025-08-25 00:51:51,787 - views.attendance - INFO - run_attendance:2730 - Attendance access by padmaja_user (9)
+2025-08-25 00:51:51,990 - views.attendance - ERROR - show_database_status:3696 - Database connection failed: Not an executable object: 'SELECT DB_NAME()'
+2025-08-25 00:51:52,012 - views.attendance - INFO - get_location_ultra_fast:2407 - Preset location selected: Main Office
+2025-08-25 00:51:52,336 - views.attendance - INFO - validate_session_security:2629 - Session validation successful for user: padmaja_user
+2025-08-25 00:51:52,336 - views.attendance - INFO - run_attendance:2730 - Attendance access by padmaja_user (9)
+2025-08-25 00:51:52,504 - views.attendance - ERROR - show_database_status:3696 - Database connection failed: Not an executable object: 'SELECT DB_NAME()'
+2025-08-25 00:51:52,520 - views.attendance - INFO - check_location_permission:2312 - Distance to Main Office Mumbai: 0.0m (limit: 100m)
+2025-08-25 00:51:52,520 - views.attendance - INFO - check_location_permission:2315 - Location approved: Main Office Mumbai
+2025-08-25 00:51:52,520 - security - INFO - log_security_event:2653 - LOCATION_VERIFIED - 9 - padmaja_user - Location: Main Office Mumbai, Distance: 0.0m
+2025-08-25 00:51:52,520 - views.attendance - ERROR - run_attendance:2905 - Employee verification error: 'NoneType' object has no attribute 'empty'
+2025-08-25 04:44:35,698 - views.attendance - INFO - validate_session_security:2629 - Session validation successful for user: padmaja_user
+2025-08-25 04:44:35,699 - views.attendance - INFO - run_attendance:2730 - Attendance access by padmaja_user (9)
+2025-08-25 04:44:35,950 - views.attendance - ERROR - show_database_status:3696 - Database connection failed: 'pyodbc.Connection' object has no attribute 'connect'
+2025-08-25 04:46:41,572 - views.attendance - INFO - validate_session_security:2629 - Session validation successful for user: padmaja_user
+2025-08-25 04:46:41,574 - views.attendance - INFO - run_attendance:2730 - Attendance access by padmaja_user (9)
+2025-08-25 04:46:41,781 - views.attendance - ERROR - show_database_status:3696 - Database connection failed: 'pyodbc.Connection' object has no attribute 'connect'
+2025-08-25 04:46:58,372 - views.attendance - INFO - validate_session_security:2629 - Session validation successful for user: padmaja_user
+2025-08-25 04:46:58,374 - views.attendance - INFO - run_attendance:2730 - Attendance access by padmaja_user (9)
+2025-08-25 04:46:58,379 - views.attendance - ERROR - show_database_status:3696 - Database connection failed: 'pyodbc.Connection' object has no attribute 'connect'
+2025-08-25 04:46:58,387 - views.attendance - INFO - get_location_ultra_fast:2407 - Preset location selected: Main Office
+2025-08-25 04:46:58,687 - views.attendance - INFO - validate_session_security:2629 - Session validation successful for user: padmaja_user
+2025-08-25 04:46:58,688 - views.attendance - INFO - run_attendance:2730 - Attendance access by padmaja_user (9)
+2025-08-25 04:46:58,696 - views.attendance - ERROR - show_database_status:3696 - Database connection failed: 'pyodbc.Connection' object has no attribute 'connect'
+2025-08-25 04:46:58,702 - views.attendance - INFO - check_location_permission:2312 - Distance to Main Office Mumbai: 0.0m (limit: 100m)
+2025-08-25 04:46:58,705 - views.attendance - INFO - check_location_permission:2315 - Location approved: Main Office Mumbai
+2025-08-25 04:46:58,708 - security - INFO - log_security_event:2653 - LOCATION_VERIFIED - 9 - padmaja_user - Location: Main Office Mumbai, Distance: 0.0m
+2025-08-25 04:46:58,713 - views.attendance - INFO - load_employee_master:1562 - Loading employee master data
+2025-08-25 04:47:15,102 - views.attendance - ERROR - safe_db_connection:1215 - Database connection error: (pyodbc.OperationalError) ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-08-25 04:47:15,106 - views.attendance - WARNING - load_employee_master:1578 - Database connection failed: (pyodbc.OperationalError) ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-08-25 04:47:15,109 - views.attendance - ERROR - run_attendance:2905 - Employee verification error: 'NoneType' object has no attribute 'empty'
