@@ -225,3 +225,4 @@
 [2025-08-27 00:37:17] LOGOUT - User: padmaja_user - Session duration: 0:00:10.672087
 [2025-08-27 00:37:39] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
 [2025-08-27 00:37:45] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-27 01:29:07] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
