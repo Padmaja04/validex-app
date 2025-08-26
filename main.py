@@ -4,6 +4,18 @@ from datetime import datetime, timedelta
 import sys
 import os
 import pandas as pd
+def login():
+    st.title("🔒 Validex App Login")
+    password = st.text_input("Enter password", type="password")
+    if password == "validex123":  # Change this to your secret
+        return True
+    else:
+        st.warning("Incorrect password")
+        return False
+
+if login():
+    # Your actual app code starts here
+    st.write("Welcome to Validex!")
 
 # ---------- Add project root to sys.path ----------
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))

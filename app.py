@@ -19,6 +19,20 @@ from deepface import DeepFace  # ✅ lowercase 'deepface'
 from PIL import Image
 import numpy as np
 import tempfile
+
+def login():
+    st.title("🔒 Validex App Login")
+    password = st.text_input("Enter password", type="password")
+    if password == "validex123":  # Change this to your secret
+        return True
+    else:
+        st.warning("Incorrect password")
+        return False
+
+if login():
+    # Your actual app code starts here
+    st.write("Welcome to Validex!")
+
 st.markdown("""
     <style>
     [data-testid="stSidebarNav"] { display: none !important; }
