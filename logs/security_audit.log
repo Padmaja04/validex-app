@@ -102,3 +102,126 @@
 [2025-08-25 04:46:25] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
 [2025-08-25 04:46:41] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
 2025-08-25 04:46:58,708 - security - INFO - log_security_event:2653 - LOCATION_VERIFIED - 9 - padmaja_user - Location: Main Office Mumbai, Distance: 0.0m
+[2025-08-25 06:11:11] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-25 06:11:27] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-25 06:24:00] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-25 06:24:05] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-25 18:39:48] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-25 18:39:55] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-25 18:39:55] SECURITY_EVENT: LOCATION_VERIFIED | Employee: 9 | User: padmaja_user | Details: Location: Main Office Mumbai, Distance: 0.0m
+[2025-08-25 18:39:55] SECURITY_EVENT: EMPLOYEE_VERIFIED | Employee: 9 | User: padmaja_user | Details: Master database match confirmed
+[2025-08-25 18:40:21] SECURITY_EVENT: LOCATION_VERIFIED | Employee: 9 | User: padmaja_user | Details: Location: Main Office Mumbai, Distance: 0.0m
+[2025-08-25 18:40:21] SECURITY_EVENT: EMPLOYEE_VERIFIED | Employee: 9 | User: padmaja_user | Details: Master database match confirmed
+[2025-08-25 18:40:26] SECURITY_EVENT: LOCATION_VERIFIED | Employee: 9 | User: padmaja_user | Details: Location: Main Office Mumbai, Distance: 0.0m
+[2025-08-25 18:40:26] SECURITY_EVENT: EMPLOYEE_VERIFIED | Employee: 9 | User: padmaja_user | Details: Master database match confirmed
+[2025-08-25 18:40:37] SECURITY_EVENT: LOCATION_VERIFIED | Employee: 9 | User: padmaja_user | Details: Location: Main Office Mumbai, Distance: 0.0m
+[2025-08-25 18:40:37] SECURITY_EVENT: EMPLOYEE_VERIFIED | Employee: 9 | User: padmaja_user | Details: Master database match confirmed
+[2025-08-25 18:40:53] SECURITY_EVENT: LOCATION_VERIFIED | Employee: 9 | User: padmaja_user | Details: Location: Main Office Mumbai, Distance: 0.0m
+[2025-08-25 18:40:53] SECURITY_EVENT: EMPLOYEE_VERIFIED | Employee: 9 | User: padmaja_user | Details: Master database match confirmed
+[2025-08-25 18:57:43] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-25 18:57:50] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-25 18:57:50] SECURITY_EVENT: LOCATION_VERIFIED | Employee: 9 | User: padmaja_user | Details: Location: Main Office Mumbai, Distance: 0.0m
+[2025-08-25 18:57:50] SECURITY_EVENT: EMPLOYEE_VERIFIED | Employee: 9 | User: padmaja_user | Details: Master database match confirmed
+[2025-08-25 18:58:05] SECURITY_EVENT: LOCATION_VERIFIED | Employee: 9 | User: padmaja_user | Details: Location: Main Office Mumbai, Distance: 0.0m
+[2025-08-25 18:58:05] SECURITY_EVENT: EMPLOYEE_VERIFIED | Employee: 9 | User: padmaja_user | Details: Master database match confirmed
+[2025-08-25 18:58:11] SECURITY_EVENT: LOCATION_VERIFIED | Employee: 9 | User: padmaja_user | Details: Location: Main Office Mumbai, Distance: 0.0m
+[2025-08-25 18:58:12] SECURITY_EVENT: EMPLOYEE_VERIFIED | Employee: 9 | User: padmaja_user | Details: Master database match confirmed
+[2025-08-25 18:58:17] SECURITY_EVENT: LOCATION_VERIFIED | Employee: 9 | User: padmaja_user | Details: Location: Main Office Mumbai, Distance: 0.0m
+[2025-08-25 18:58:17] SECURITY_EVENT: EMPLOYEE_VERIFIED | Employee: 9 | User: padmaja_user | Details: Master database match confirmed
+[2025-08-25 19:01:20] LOGOUT - User: padmaja_user - Session duration: 0:03:36.840578
+[2025-08-25 19:01:31] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-25 19:01:36] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-25 19:01:36] SECURITY_EVENT: LOCATION_VERIFIED | Employee: 9 | User: padmaja_user | Details: Location: Main Office Mumbai, Distance: 0.0m
+[2025-08-25 19:01:36] SECURITY_EVENT: EMPLOYEE_VERIFIED | Employee: 9 | User: padmaja_user | Details: Master database match confirmed
+[2025-08-25 19:01:45] SECURITY_EVENT: LOCATION_VERIFIED | Employee: 9 | User: padmaja_user | Details: Location: Main Office Mumbai, Distance: 0.0m
+[2025-08-25 19:01:45] SECURITY_EVENT: EMPLOYEE_VERIFIED | Employee: 9 | User: padmaja_user | Details: Master database match confirmed
+[2025-08-25 19:01:45] SECURITY_EVENT: BIOMETRIC_ATTEMPT | Employee: 9 | User: padmaja_user | Details: Confidence: 95.50%, Threshold: 30%
+[2025-08-25 19:01:45] SECURITY_EVENT: BIOMETRIC_SUCCESS | Employee: 9 | User: padmaja_user | Details: High confidence match: 95.50%
+[2025-08-25 19:01:45] SECURITY_EVENT: CHECKIN_SUCCESS | Employee: 9 | User: padmaja_user | Details: Method: API, Confidence: 95.5%, Location: Main Office Mumbai
+[2025-08-25 19:03:57] SECURITY_EVENT: LOCATION_VERIFIED | Employee: 9 | User: padmaja_user | Details: Location: Main Office Mumbai, Distance: 0.0m
+[2025-08-25 19:03:57] SECURITY_EVENT: EMPLOYEE_VERIFIED | Employee: 9 | User: padmaja_user | Details: Master database match confirmed
+[2025-08-25 19:04:04] SECURITY_EVENT: LOCATION_VERIFIED | Employee: 9 | User: padmaja_user | Details: Location: Main Office Mumbai, Distance: 0.0m
+[2025-08-25 19:04:04] SECURITY_EVENT: EMPLOYEE_VERIFIED | Employee: 9 | User: padmaja_user | Details: Master database match confirmed
+[2025-08-25 19:04:04] SECURITY_EVENT: BIOMETRIC_ATTEMPT | Employee: 9 | User: padmaja_user | Details: Confidence: 95.50%, Threshold: 30%
+[2025-08-25 19:04:04] SECURITY_EVENT: BIOMETRIC_SUCCESS | Employee: 9 | User: padmaja_user | Details: High confidence match: 95.50%
+[2025-08-25 19:04:05] SECURITY_EVENT: CHECKIN_SUCCESS | Employee: 9 | User: padmaja_user | Details: Method: API, Confidence: 95.5%, Location: Main Office Mumbai
+[2025-08-25 19:06:56] LOGOUT - User: padmaja_user - Session duration: 0:05:25.134080
+[2025-08-25 19:07:03] ADMIN_LOGIN_SUCCESS - User: prashant_user - 
+[2025-08-25 23:10:38] ADMIN_LOGIN_SUCCESS - User: prashant_user - 
+[2025-08-25 23:13:13] LOGOUT - User: prashant_user - Session duration: 0:02:34.898478
+[2025-08-25 23:13:26] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-25 23:13:37] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-25 23:13:37] SECURITY_EVENT: LOCATION_VERIFIED | Employee: 9 | User: padmaja_user | Details: Location: Main Office Mumbai, Distance: 0.0m
+[2025-08-25 23:13:38] SECURITY_EVENT: EMPLOYEE_VERIFIED | Employee: 9 | User: padmaja_user | Details: Master database match confirmed
+[2025-08-25 23:13:53] SECURITY_EVENT: LOCATION_VERIFIED | Employee: 9 | User: padmaja_user | Details: Location: Main Office Mumbai, Distance: 0.0m
+[2025-08-25 23:13:53] SECURITY_EVENT: EMPLOYEE_VERIFIED | Employee: 9 | User: padmaja_user | Details: Master database match confirmed
+[2025-08-25 23:13:53] SECURITY_EVENT: BIOMETRIC_ATTEMPT | Employee: 9 | User: padmaja_user | Details: Confidence: 95.50%, Threshold: 30%
+[2025-08-25 23:13:53] SECURITY_EVENT: BIOMETRIC_SUCCESS | Employee: 9 | User: padmaja_user | Details: High confidence match: 95.50%
+[2025-08-25 23:13:53] SECURITY_EVENT: CHECKIN_SUCCESS | Employee: 9 | User: padmaja_user | Details: Method: API, Confidence: 95.5%, Location: Main Office Mumbai
+[2025-08-26 01:32:33] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-26 01:32:39] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-26 01:44:17] LOGOUT - User: padmaja_user - Session duration: 0:11:44.204273
+[2025-08-26 01:45:26] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-26 01:45:57] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-26 02:06:11] LOGOUT - User: padmaja_user - Session duration: 0:20:44.576213
+[2025-08-26 02:06:30] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-26 02:06:34] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-26 02:10:27] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-26 02:10:36] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-26 02:12:25] LOGOUT - User: padmaja_user - Session duration: 0:01:57.615401
+[2025-08-26 02:13:52] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-26 02:14:25] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-26 22:29:20] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-26 22:29:27] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-26 22:46:19] LOGOUT - User: padmaja_user - Session duration: 0:16:59.296245
+[2025-08-26 22:46:38] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-26 22:46:43] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-26 22:54:33] LOGOUT - User: padmaja_user - Session duration: 0:07:54.624090
+[2025-08-26 22:54:46] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-26 22:54:52] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-26 23:01:03] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-26 23:01:09] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-26 23:02:11] LOGOUT - User: padmaja_user - Session duration: 0:01:08.480599
+[2025-08-26 23:11:01] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-26 23:11:05] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-26 23:14:59] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-26 23:15:05] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-26 23:36:12] LOGOUT - User: padmaja_user - Session duration: 0:21:13.554466
+[2025-08-26 23:36:33] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-26 23:36:48] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-26 23:37:52] LOGOUT - User: padmaja_user - Session duration: 0:01:18.756846
+[2025-08-26 23:38:02] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-26 23:38:08] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-26 23:38:28] LOGOUT - User: padmaja_user - Session duration: 0:00:25.891105
+[2025-08-26 23:38:45] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-26 23:38:51] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:10:05] LOGOUT - User: padmaja_user - Session duration: 0:31:19.849588
+[2025-08-27 00:10:30] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:10:35] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:11:56] LOGOUT - User: padmaja_user - Session duration: 0:01:26.441726
+[2025-08-27 00:12:05] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:12:09] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:12:17] LOGOUT - User: padmaja_user - Session duration: 0:00:11.476384
+[2025-08-27 00:12:35] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:12:40] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:12:56] LOGOUT - User: padmaja_user - Session duration: 0:00:20.828457
+[2025-08-27 00:13:02] EMPLOYEE_LOGIN_SUCCESS - User: sunil_user - Employee ID: 1
+[2025-08-27 00:13:06] ATTENDANCE_ACCESS_REQUEST - User: sunil_user - Employee ID: 1
+[2025-08-27 00:13:20] LOGOUT - User: sunil_user - Session duration: 0:00:17.801795
+[2025-08-27 00:13:32] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:13:37] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:14:06] LOGOUT - User: padmaja_user - Session duration: 0:00:34.512728
+[2025-08-27 00:14:26] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:14:31] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:18:13] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:31:41] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:31:46] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:33:45] LOGOUT - User: padmaja_user - Session duration: 0:02:04.912117
+[2025-08-27 00:35:27] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:35:32] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:36:58] LOGOUT - User: padmaja_user - Session duration: 0:01:30.737908
+[2025-08-27 00:37:06] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:37:10] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:37:17] LOGOUT - User: padmaja_user - Session duration: 0:00:10.672087
+[2025-08-27 00:37:39] EMPLOYEE_LOGIN_SUCCESS - User: padmaja_user - Employee ID: 9
+[2025-08-27 00:37:45] ATTENDANCE_ACCESS_REQUEST - User: padmaja_user - Employee ID: 9

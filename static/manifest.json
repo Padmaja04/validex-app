@@ -1,57 +1,114 @@
 {
-  "name": "Company Attendance System",
+  "name": "Secure Attendance System",
   "short_name": "Attendance",
-  "description": "Employee Attendance with Face Recognition and GPS",
+  "description": "GPS and Biometric Attendance Tracking System",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#667eea",
-  "theme_color": "#764ba2",
+  "background_color": "#ffffff",
+  "theme_color": "#2196F3",
   "orientation": "portrait-primary",
   "scope": "/",
-  "categories": [
-    "business",
-    "productivity"
-  ],
-  "lang": "en-US",
-  "dir": "ltr",
+  "lang": "en",
+  "categories": ["business", "productivity"],
   "icons": [
     {
-      "src": "/static/icon-72.png",
+      "src": "icons/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "maskable any"
     },
     {
-      "src": "/static/icon-96.png",
+      "src": "icons/icon-96x96.png",
       "sizes": "96x96",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "maskable any"
     },
     {
-      "src": "/static/icon-128.png",
+      "src": "icons/icon-128x128.png",
       "sizes": "128x128",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "maskable any"
     },
     {
-      "src": "/static/icon-192.png",
+      "src": "icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable any"
     },
     {
-      "src": "/static/icon-512.png",
+      "src": "icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Check In",
+      "short_name": "Check In",
+      "description": "Quick check-in to attendance system",
+      "url": "/?action=checkin",
+      "icons": [
+        {
+          "src": "icons/checkin-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Check Out",
+      "short_name": "Check Out",
+      "description": "Quick check-out from attendance system",
+      "url": "/?action=checkout",
+      "icons": [
+        {
+          "src": "icons/checkout-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
     }
   ],
   "screenshots": [
     {
-      "src": "/static/screenshot1.png",
-      "sizes": "540x720",
+      "src": "screenshots/mobile-screenshot-1.png",
       "type": "image/png",
-      "label": "Attendance check-in screen"
+      "sizes": "540x720",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "screenshots/desktop-screenshot-1.png",
+      "type": "image/png",
+      "sizes": "1280x720",
+      "form_factor": "wide"
     }
-  ]
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "features": [
+    "GPS Location",
+    "Camera Access",
+    "Biometric Recognition",
+    "Offline Support"
+  ],
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
 }

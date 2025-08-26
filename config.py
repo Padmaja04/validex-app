@@ -43,26 +43,26 @@ FEEDBACK_RAW_TABLE = "dbo.feedback_raw"
 FEEDBACK_REVIEWED_TABLE = "dbo.feedback_reviewed"
 
 # ===== ENHANCED GPS/Location Settings =====
-# Office location coordinates (UPDATE THESE WITH YOUR ACTUAL COORDINATES)
+# Office location coordinates (CRITICAL: THESE MUST MATCH YOUR PRESET_LOCATIONS IN ATTENDANCE.PY)
 OFFICE_LOCATIONS = [
     {
-        "lat": 17.70588,  # Mumbai coordinates - REPLACE WITH YOUR MAIN OFFICE
+        "lat": 17.70588,  # Main Office Mumbai - MUST MATCH preset "office_main"
         "lon": 73.98451,
-        "name": "Main Office Mumbai",
+        "name": "Main Office",  # Changed from "Main Office Mumbai" to match preset
         "radius": 100,  # Allowed radius in meters
         "address": "Main Office Building, Mumbai"
     },
     {
-        "lat": 19.0760,  # Delhi coordinates - REPLACE WITH YOUR BRANCH OFFICE
-        "lon": 72.8777,
-        "name": "Branch Office Delhi",
-        "radius": 150,
+        "lat": 12.97194,  # Branch Office Delhi - UPDATED to match preset "office_branch"
+        "lon": 77.59369,  # UPDATED coordinates (was 12.84162, 77.67693)
+        "name": "Branch Office",  # Changed from "Branch Office Delhi" to match preset
+        "radius": 100,
         "address": "Branch Office, Delhi"
     },
     {
-        "lat": 21.1458,  # Nagpur coordinates - ADD MORE OFFICES AS NEEDED
+        "lat": 21.1458,  # Regional Office Nagpur - This matches preset "office_remote"
         "lon": 79.0882,
-        "name": "Regional Office Nagpur",
+        "name": "Remote Location",  # Changed from "Regional Office Nagpur" to match preset
         "radius": 200,
         "address": "Regional Office, Nagpur"
     }
@@ -85,6 +85,7 @@ LOCATION_VERIFICATION = {
     "allow_manual_override": False,  # Allow manual coordinate input (for testing only)
     "log_all_attempts": True,  # Log all location detection attempts
     "require_movement_check": False,  # Check if user moved significantly (anti-spoofing)
+    "debug_mode": True,  # Enable detailed location debugging
 }
 
 # Mobile app settings (Enhanced)
@@ -275,65 +276,161 @@ def safe_date_for_sql(dt):
 
 
 # ===== ENHANCED GPS UTILITY FUNCTIONS =====
-def validate_coordinates(lat, lon):
-    """
-    Validate GPS coordinates are within reasonable bounds
-    """
+def validate_office_coordinates():
+    """Validate all office coordinates are properly configured"""
+    validation_results = []
+
+    for idx, office in enumerate(OFFICE_LOCATIONS):
+        result = {
+            "index": idx,
+            "name": office["name"],
+            "coordinates": f"{office['lat']:.6f}, {office['lon']:.6f}",
+            "radius": office["radius"],
+            "valid": True,
+            "issues": []
+        }
+
+        # Check coordinate ranges
+        if not (-90 <= office["lat"] <= 90):
+            result["valid"] = False
+            result["issues"].append(f"Invalid latitude: {office['lat']}")
+
+        if not (-180 <= office["lon"] <= 180):
+            result["valid"] = False
+            result["issues"].append(f"Invalid longitude: {office['lon']}")
+
+        # Check for null island (0,0)
+        if office["lat"] == 0.0 and office["lon"] == 0.0:
+            result["valid"] = False
+            result["issues"].append("Coordinates are (0,0) - likely invalid")
+
+        # Check radius
+        if office["radius"] <= 0:
+            result["valid"] = False
+            result["issues"].append(f"Invalid radius: {office['radius']}")
+
+        validation_results.append(result)
+
+    return validation_results
+
+
+def log_coordinate_mismatch_check():
+    """Check if coordinates match between config and preset locations"""
+    # This would be called from attendance.py to cross-check
     try:
-        lat = float(lat)
-        lon = float(lon)
+        from attendance import PRESET_LOCATIONS
 
-        # Basic coordinate validation
-        if not (-90 <= lat <= 90):
-            return False, "Latitude must be between -90 and 90"
-        if not (-180 <= lon <= 180):
-            return False, "Longitude must be between -180 and 180"
+        mismatches = []
 
-        # Check if coordinates are not (0,0) - likely invalid
-        if lat == 0.0 and lon == 0.0:
-            return False, "Invalid coordinates (0,0)"
+        # Check if we can match offices by name
+        for preset_key, preset_data in PRESET_LOCATIONS.items():
+            preset_name = preset_data["name"]
+            preset_coords = (preset_data["lat"], preset_data["lon"])
 
-        return True, "Valid coordinates"
+            # Find matching office in config
+            matching_office = None
+            for office in OFFICE_LOCATIONS:
+                if office["name"].lower() == preset_name.lower():
+                    matching_office = office
+                    break
 
-    except (TypeError, ValueError):
-        return False, "Invalid coordinate format"
+            if matching_office:
+                office_coords = (matching_office["lat"], matching_office["lon"])
+
+                # Check if coordinates match (within 0.00001 tolerance)
+                lat_diff = abs(preset_coords[0] - office_coords[0])
+                lon_diff = abs(preset_coords[1] - office_coords[1])
+
+                if lat_diff > 0.00001 or lon_diff > 0.00001:
+                    mismatches.append({
+                        "preset_key": preset_key,
+                        "name": preset_name,
+                        "preset_coords": preset_coords,
+                        "config_coords": office_coords,
+                        "lat_diff": lat_diff,
+                        "lon_diff": lon_diff
+                    })
+            else:
+                mismatches.append({
+                    "preset_key": preset_key,
+                    "name": preset_name,
+                    "preset_coords": preset_coords,
+                    "config_coords": None,
+                    "error": "No matching office found in config"
+                })
+
+        if mismatches:
+            print("⚠️ COORDINATE MISMATCHES DETECTED:")
+            for mismatch in mismatches:
+                print(f"  - {mismatch}")
+
+        return mismatches
+
+    except ImportError:
+        print("Cannot import PRESET_LOCATIONS from attendance.py")
+        return []
 
 
-def calculate_distance_to_offices(user_lat, user_lon):
-    """
-    Calculate distance to all office locations and return the closest one
-    """
+def enhanced_calculate_distance_to_offices(user_lat, user_lon, debug=False):
+    """Enhanced distance calculation with debugging"""
     from geopy.distance import geodesic
 
-    is_valid, message = validate_coordinates(user_lat, user_lon)
+    is_valid, message = validate_office_coordinates(user_lat, user_lon)
     if not is_valid:
-        return None, None, message
+        return None, None, message, []
 
     user_location = (user_lat, user_lon)
     closest_office = None
     min_distance = float('inf')
+    all_distances = []
 
-    distances = []
+    if debug:
+        print(f"\n=== LOCATION VERIFICATION DEBUG ===")
+        print(f"User coordinates: {user_lat:.6f}, {user_lon:.6f}")
+        print(f"Checking against {len(OFFICE_LOCATIONS)} office locations:")
 
-    for office in OFFICE_LOCATIONS:
+    for idx, office in enumerate(OFFICE_LOCATIONS):
         office_location = (office["lat"], office["lon"])
         try:
             distance = geodesic(user_location, office_location).meters
-            distances.append({
+            within_radius = distance <= office["radius"]
+
+            distance_info = {
                 "office": office,
                 "distance_meters": distance,
-                "within_radius": distance <= office["radius"]
-            })
+                "within_radius": within_radius,
+                "office_coords": f"{office['lat']:.6f}, {office['lon']:.6f}",
+                "user_coords": f"{user_lat:.6f}, {user_lon:.6f}"
+            }
+
+            all_distances.append(distance_info)
+
+            if debug:
+                status = "✅ AUTHORIZED" if within_radius else "❌ OUT OF RANGE"
+                print(f"  {idx + 1}. {office['name']} {status}")
+                print(f"     Office: {office['lat']:.6f}, {office['lon']:.6f}")
+                print(f"     Distance: {distance:.1f}m (limit: {office['radius']}m)")
+                print(f"     Within range: {within_radius}")
 
             if distance < min_distance:
                 min_distance = distance
                 closest_office = office
 
         except Exception as e:
-            print(f"Error calculating distance to {office['name']}: {e}")
+            error_msg = f"Error calculating distance to {office['name']}: {e}"
+            print(error_msg)
+            if debug:
+                print(f"     ERROR: {error_msg}")
             continue
 
-    return closest_office, distances, "Calculation successful"
+    if debug:
+        print(f"\nClosest office: {closest_office['name'] if closest_office else 'None'}")
+        print(f"Min distance: {min_distance:.1f}m")
+        authorized = any(d["within_radius"] for d in all_distances)
+        print(f"Authorization status: {'✅ AUTHORIZED' if authorized else '❌ DENIED'}")
+        print(f"=== END DEBUG ===\n")
+
+    return closest_office, all_distances, "Calculation successful", all_distances
 
 
 def log_location_attempt(employee_id, username, lat, lon, success, details=""):
@@ -485,7 +582,7 @@ def create_location_verification_report(employee_id, username, location_data):
         lon = location_data.get("longitude")
 
         if lat and lon:
-            closest_office, distances, message = calculate_distance_to_offices(lat, lon)
+            closest_office, distances, message = enhanced_calculate_distance_to_offices(lat, lon)
 
             report.update({
                 "coordinates": {"latitude": lat, "longitude": lon},
@@ -571,7 +668,7 @@ def system_health_check():
     try:
         if len(OFFICE_LOCATIONS) > 0:
             for office in OFFICE_LOCATIONS:
-                is_valid, message = validate_coordinates(office["lat"], office["lon"])
+                is_valid, message = validate_office_coordinates(office["lat"], office["lon"])
                 if not is_valid:
                     raise ValueError(f"Invalid coordinates for {office['name']}: {message}")
             health_report["gps_services"] = {"status": "healthy",
@@ -629,7 +726,7 @@ def initialize_system():
     # Validate GPS configuration
     print(f"📍 GPS: {len(OFFICE_LOCATIONS)} office locations configured")
     for office in OFFICE_LOCATIONS:
-        is_valid, message = validate_coordinates(office["lat"], office["lon"])
+        is_valid, message = validate_office_coordinates(office["lat"], office["lon"])
         status = "✅" if is_valid else "❌"
         print(f"  {status} {office['name']}: {office['lat']}, {office['lon']} ({message})")
 

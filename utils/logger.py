@@ -2,6 +2,7 @@ import pandas as pd
 from datetime import datetime
 import os  # 👈 Add this to handle folders
 
+
 def log_admin_action(username, emp_id, action_type, description, reason=None):
     log_path = "data/admin_log.csv"
 
@@ -25,3 +26,4 @@ def log_admin_action(username, emp_id, action_type, description, reason=None):
         df = pd.DataFrame([entry])
 
     df.to_csv(log_path, index=False)
+
